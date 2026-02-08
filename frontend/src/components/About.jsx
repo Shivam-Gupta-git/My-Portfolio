@@ -1,5 +1,4 @@
 import React from "react";
-import Scene from "./animeChracter/Cute_cartoon_girl_character";
 import { softwareLogo } from "../components/data";
 import { CgMail } from "react-icons/cg";
 import { IoIosContact } from "react-icons/io";
@@ -40,7 +39,6 @@ const About = () => {
 
           {/* CENTER OBJECT / SCENE HOLDER */}
           <div className="absolute bottom-12 sm:bottom-4 left-1/2 -translate-x-1/2 sm:left-[35%] sm:translate-x-0 md:left-[38%] lg:left-[40%] w-[35%] sm:w-[28%] md:w-[22%] lg:w-[18%] xl:w-[15%] h-full">
-            <Scene></Scene>
           </div>
         </div>
       </div>

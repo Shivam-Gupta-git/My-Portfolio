@@ -1,6 +1,5 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import Scene from "./homeCharacter/Isometric_bedroom";
 
 
 const Contact = () => {
@@ -128,14 +127,6 @@ const Contact = () => {
               </form>
             </div>
           </div>
-
-          {/* Right Section */}
-          <div className="w-full xl:w-7/12">
-            <div className="w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px] shadow-sm shadow-gray-600 rounded-2xl sm:rounded-3xl hover:scale-[1.01] transition cursor-grab">
-              <Scene></Scene>
-            </div>
-          </div>
-
         </div>
       </div>
     </section>

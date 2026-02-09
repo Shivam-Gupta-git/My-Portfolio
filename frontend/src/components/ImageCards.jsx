@@ -1,16 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, Suspense, lazy, memo } from "react";
 import CreativeNav from "./CreativeNav";
-import Illustrator from "../pages/React_Page";
-import PremierePro from "../pages/NextJS";
-import AfterEffects from "../pages/FullStack";
-import CorelDraw from "../pages/Java";
-import JavaScript from "../pages/JavaScript";
-import React_Page from "../pages/React_Page";
-import NextJS from "../pages/NextJS";
-import FullStack from "../pages/FullStack";
-import Java from "../pages/Java";
 
-function ImageCards() {
+// Lazy load page components to improve initial load performance
+const JavaScript = lazy(() => import("../pages/JavaScript"));
+const React_Page = lazy(() => import("../pages/React_Page"));
+const NextJS = lazy(() => import("../pages/NextJS"));
+const FullStack = lazy(() => import("../pages/FullStack"));
+const Java = lazy(() => import("../pages/Java"));
+
+const ImageCards = memo(function ImageCards() {
   const [activeTab, setActiveTab] = useState("photoshop");
 
   // Determine which component to render based on the active tab
@@ -41,10 +39,14 @@ function ImageCards() {
           setActiveTab={setActiveTab}
         ></CreativeNav>
 
-        <div className="mt-3 sm:mt-4 md:mt-6">{renderContent()}</div>
+        <div className="mt-3 sm:mt-4 md:mt-6">
+          <Suspense fallback={<div className="flex items-center justify-center min-h-[400px]"><div className="text-gray-400">Loading...</div></div>}>
+            {renderContent()}
+          </Suspense>
+        </div>
       </div>
     </div>
   );
-}
+});
 
 export default ImageCards;

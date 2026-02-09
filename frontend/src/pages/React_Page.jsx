@@ -43,6 +43,8 @@ function React_Page() {
                 src={img}
                 alt={`box-${i}`}
                 className="w-full h-full object-contain rounded-lg"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           ))}
@@ -72,6 +74,7 @@ function React_Page() {
                   src={selectedImage}
                   alt={selectedProject.title}
                   className="w-full h-full object-contain rounded-lg"
+                  loading="eager"
                 />
               </div>
 

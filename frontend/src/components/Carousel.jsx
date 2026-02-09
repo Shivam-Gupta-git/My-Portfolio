@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, memo, useMemo } from "react";
 
-const Carousel = () => {
-  const sections = [
+const Carousel = memo(() => {
+  const sections = useMemo(() => [
     [
       { title: "Project 1", image: "/images/frontend6.png", link: "https://study-mate-flame.vercel.app" },
       { title: "Project 2", image: "/images/frontend3.png", link: "https://java-script-project-alpha.vercel.app" },
@@ -14,7 +14,7 @@ const Carousel = () => {
       { title: "Project 7", image: "/images/project7.jpg", link: "https://example.com/7" },
       { title: "Project 8", image: "/images/project8.jpg", link: "https://example.com/8" },
     ],
-  ];
+  ], []);
 
   const [currentSection, setCurrentSection] = useState(0);
   const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -74,8 +74,10 @@ const Carousel = () => {
               {/* Image */}
               <img
                 src={box.image}
-                alt={''}
+                alt={box.title}
                 className="w-full h-full object-cover"
+                loading="lazy"
+                decoding="async"
               />
               {/* Title overlay */}
               <div className="absolute bottom-0 w-full bg-black/50 text-white text-center py-1.5 sm:py-2 font-semibold text-xs sm:text-sm md:text-base">
@@ -87,7 +89,7 @@ const Carousel = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Carousel;
 

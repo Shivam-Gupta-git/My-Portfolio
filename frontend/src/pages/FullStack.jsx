@@ -7,6 +7,8 @@ function FullStack() {
   const [selectedImage, setSelectedImage] = useState(null);
   const [selectedProject, setSelectedProject] = useState(null);
 
+
+
   const openModal = (image, project) => {
     setSelectedImage(image);
     setSelectedProject(project);
@@ -43,6 +45,8 @@ function FullStack() {
                 src={img}
                 alt={`box-${i}`}
                 className="w-full h-full object-contain rounded-lg"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           ))}
@@ -72,6 +76,7 @@ function FullStack() {
                   src={selectedImage}
                   alt={selectedProject.title}
                   className="w-full h-full object-contain rounded-lg"
+                  loading="eager"
                 />
               </div>
 

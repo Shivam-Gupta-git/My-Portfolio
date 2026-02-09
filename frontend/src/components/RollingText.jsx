@@ -1,6 +1,6 @@
-import React from "react";
+import React, { memo } from "react";
 
-function RollingText() {
+const RollingText = memo(function RollingText() {
   const skills = [
     "HTML",
     "CSS",
@@ -47,6 +47,6 @@ function RollingText() {
       </div>
     </div>
   );
-}
+});
 
 export default RollingText;

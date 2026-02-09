@@ -235,7 +235,7 @@ function SoftwareInfo() {
               <p className='w-[80%] text-gray-400 text-[8px] sm:text-[9px] md:text-[10px] lg:text-[11px] px-2 sm:px-3 md:px-0 leading-tight'>JavaScript is a powerful programming language used to create interactive and dynamic web applications</p>
             </div>
             <div className='w-[50px] h-[50px] sm:w-[50px] sm:h-[50px] md:w-[60px] md:h-[60px] lg:w-[70px] lg:h-[70px] rounded-xl sm:rounded-2xl absolute right-0   bottom-0 z-10 bg-transparent'>
-              <img src="/images/JS.png" alt="" className="w-full h-full object-contain"/>
+              <img src="/images/JS.png" alt="JavaScript logo" className="w-full h-full object-contain" loading="lazy" decoding="async"/>
             </div>
           </div>
 
@@ -245,7 +245,7 @@ function SoftwareInfo() {
               <p className='w-[80%] text-gray-400 text-[8px] sm:text-[9px] md:text-[10px] lg:text-[11px] px-2 sm:px-3 md:px-0 leading-tight'>MongoDB is a NoSQL database designed for flexible, scalable, and high-performance applications.</p>
             </div>
             <div className='w-[50px] h-[50px] sm:w-[50px] sm:h-[50px] md:w-[60px] md:h-[60px] lg:w-[70px] lg:h-[70px] rounded-full absolute right-0  bottom-0 z-10 bg-gray-100 p-2'>
-              <img src="/images/mongo.ico" alt="" className="w-full h-full object-contain" />
+              <img src="/images/mongo.ico" alt="MongoDB logo" className="w-full h-full object-contain" loading="lazy" decoding="async" />
             </div>
           </div>
           
@@ -255,7 +255,7 @@ function SoftwareInfo() {
               <p className='text-gray-400 text-[8px] sm:text-[9px] md:text-[10px] lg:text-[11px] w-[90%] px-2 sm:px-3 md:px-0 leading-tight'>Express.js is a fast and minimal backend framework for Node.js. Used to build REST APIs and web servers efficiently.</p>
             </div>
             <div className='w-[50px] h-[50px] sm:w-[50px] sm:h-[50px] md:w-[60px] md:h-[60px] lg:w-[70px] lg:h-[70px] rounded-full absolute right-0  bottom-0 z-10 bg-gray-100 p-2'>
-              <img src="/images/expressjs.png" alt="" className="w-full h-full object-contain" />
+              <img src="/images/expressjs.png" alt="Express.js logo" className="w-full h-full object-contain" loading="lazy" decoding="async" />
             </div>
           </div>
           
@@ -265,7 +265,7 @@ function SoftwareInfo() {
               <p className='w-[80%] text-gray-400 text-[8px] sm:text-[9px] md:text-[10px] lg:text-[11px] px-2 sm:px-3 md:px-0 leading-tight'>React is a JavaScript library for building fast and interactive user interfaces.</p>
             </div>
             <div className='w-[50px] h-[50px] sm:w-[50px] sm:h-[50px] md:w-[60px] md:h-[60px] lg:w-[70px] lg:h-[70px] rounded-full absolute right-0 bottom-0 z-10 bg-gray-100 p-2'>
-              <img src="/images/reactjs.png" alt="" className="w-full h-full object-contain "/>
+              <img src="/images/reactjs.png" alt="React logo" className="w-full h-full object-contain" loading="lazy" decoding="async"/>
             </div>
           </div>
           
@@ -275,7 +275,7 @@ function SoftwareInfo() {
               <p className='text-gray-400 text-[8px] sm:text-[9px] md:text-[10px] lg:text-[11px] w-[90%] px-2 sm:px-3 md:px-0 leading-tight'>React & Node.js together power modern full-stack web applications.</p>
             </div>
             <div className='w-[50px] h-[50px] sm:w-[50px] sm:h-[50px] md:w-[60px] md:h-[60px] lg:w-[70px] lg:h-[70px] rounded-full absolute right-0 bottom-0 z-10 bg-gray-100 p-2'>
-              <img src="/images/nodejs.png" alt="" className="w-full h-full object-contain" />
+              <img src="/images/nodejs.png" alt="Node.js logo" className="w-full h-full object-contain" loading="lazy" decoding="async" />
             </div>
           </div>
         </div>

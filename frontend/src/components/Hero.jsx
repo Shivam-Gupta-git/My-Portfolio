@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { motion } from 'framer-motion'
 import Mack from './Mack'
 import { NavLink, useLocation } from 'react-router-dom'
@@ -7,7 +7,7 @@ import SoftwareInfo from './SoftwareInfo'
 import ImageCards from './ImageCards'
 import Carousel from './Carousel'
 
-const Hero = () => {
+const Hero = memo(() => {
   const location = useLocation()
   
   return (
@@ -40,6 +40,6 @@ const Hero = () => {
     </section>
     </>
   )
-}
+})
 
 export default Hero

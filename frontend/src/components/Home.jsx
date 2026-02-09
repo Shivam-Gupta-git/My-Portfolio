@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { memo } from 'react'
 import Hero from './Hero'
 
-function Home() {
+const Home = memo(function Home() {
   return (
     <>
     <section>
@@ -9,6 +9,6 @@ function Home() {
     </section>
     </>
   )
-}
+})
 
 export default Home

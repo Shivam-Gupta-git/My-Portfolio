@@ -1,11 +1,12 @@
-import React, { useRef, useMemo, useState, useEffect } from "react";
+import React, { useRef, useMemo, useState, useEffect, memo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Environment, OrbitControls, ScrollControls } from "@react-three/drei";
 import MacContainer from "./MacContainer";
 import MacContainerMobile from "./MacContainerMobile";
 import { useLocation } from "react-router-dom";
 
-function Particles({ count = 200, isMobile = false }) {
+
+const Particles = React.memo(({ count = 200, isMobile = false }) => {
   const meshRef = useRef();
 
   const positions = useMemo(() => {
@@ -21,7 +22,7 @@ function Particles({ count = 200, isMobile = false }) {
     return new Float32Array(temp);
   }, [count, isMobile]);
 
-  // Animate particles (rotate slowly)
+
   useFrame(() => {
     if (meshRef.current) {
       meshRef.current.rotation.y += 0.0005;
@@ -46,11 +47,9 @@ function Particles({ count = 200, isMobile = false }) {
       />
     </points>
   );
-}
+});
 
-// ------------------------
-// Mack Page Component
-// ------------------------
+
 function Mack() {
   const location = useLocation();
   const [isMobile, setIsMobile] = useState(false);
@@ -96,7 +95,9 @@ function Mack() {
         <Canvas
           key={`canvas-${location.pathname}`}
           camera={{ fov: cameraFov, position: cameraPosition }}
-          gl={{ preserveDrawingBuffer: true }}
+          gl={{ preserveDrawingBuffer: true, antialias: true, powerPreference: "high-performance" }}
+          dpr={isMobile ? [1, 1.5] : [1, 2]}
+          performance={{ min: 0.5 }}
           style={{ touchAction: isMobile ? "auto" : "none" }}
         >
           {/* Controls & Environment */}
@@ -105,7 +106,10 @@ function Mack() {
             autoRotate={false}
             enableRotate={false}
           />
-          <Environment files="https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/studio_small_09_1k.hdr" />
+          <Environment 
+            files="https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/studio_small_09_1k.hdr"
+            preset="sunset"
+          />
 
           {/* Animated Particles in the background */}
           <Particles count={isMobile ? 150 : 300} isMobile={isMobile} />
@@ -124,4 +128,4 @@ function Mack() {
   );
 }
 
-export default Mack;
+export default memo(Mack);

@@ -8,6 +8,7 @@ import ImageCards from './ImageCards'
 import Carousel from './Carousel'
 import GithubStatus from './GithubStatus'
 import GitHubLiveActivity from './GitHubLiveActivity'
+import CV from './CV'
 
 
 const Hero = memo(() => {
@@ -34,6 +35,7 @@ const Hero = memo(() => {
     </div>
 
 <div>
+  <CV/>
   <RollingText></RollingText>
   <SoftwareInfo key={`software-info-${location.pathname}`}></SoftwareInfo>
   <ImageCards></ImageCards>

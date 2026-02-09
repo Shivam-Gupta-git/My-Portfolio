@@ -1,7 +1,6 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
-
 const Contact = () => {
   const formRef = useRef(null);
   const [loading, setLoading] = useState(false);
@@ -37,95 +36,90 @@ const Contact = () => {
   };
 
   return (
-    <section className="w-full flex justify-center py-8 sm:py-12 md:py-16 lg:py-20 px-3 sm:px-4 md:px-6">
-      <div className="w-full max-w-6xl px-4 sm:px-6 lg:px-10">
-        <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-500 text-center">
-          Get in Touch
-        </h1>
-        <p className="text-sm sm:text-base text-gray-600 text-center mt-2">
-          Feel free to reach out. I usually reply within a few hours.
-        </p>
+    <section className="w-full flex justify-center px-4 py-12 sm:py-16 lg:py-24">
+      <div className="w-full max-w-6xl">
 
-        {/* --- Replaced GRID with FLEX --- */}
-        <div className="flex flex-col xl:flex-row gap-6 sm:gap-8 md:gap-10 mt-8 sm:mt-12 md:mt-16 items-center">
+        {/* HEADER */}
+        <div className="text-center mb-10 sm:mb-14">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-200">
+            Get in Touch
+          </h1>
+          <p className="text-sm sm:text-base text-gray-400 mt-2">
+            Feel free to reach out. I usually reply within a few hours.
+          </p>
+        </div>
 
-          {/* Left Form */}
-          <div className="w-full xl:w-5/12">
-            <div className="bg-white shadow-md rounded-xl p-4 sm:p-6 md:p-8 border border-gray-200">
-              <form
-                ref={formRef}
-                onSubmit={handleSubmit}
-                className="w-full flex flex-col gap-4 sm:gap-5 md:gap-6 text-black"
+        {/* FORM CARD */}
+        <div className="flex justify-center">
+          <div className="w-full max-w-xl bg-white/10 backdrop-blur-lg border border-white/10 rounded-3xl shadow-xl p-6 sm:p-8 md:p-10">
+
+            <form
+              ref={formRef}
+              onSubmit={handleSubmit}
+              className="flex flex-col gap-5 text-white"
+            >
+              {/* NAME */}
+              <div>
+                <label className="block text-sm text-gray-300 mb-1">
+                  Your Name
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  value={form.name}
+                  onChange={handleChange}
+                  placeholder="What's your good name?"
+                  required
+                  className="w-full bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-sm sm:text-base
+                  focus:outline-none focus:ring-2 focus:ring-blue-400/60 transition"
+                />
+              </div>
+
+              {/* EMAIL */}
+              <div>
+                <label className="block text-sm text-gray-300 mb-1">
+                  Your Email
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  value={form.email}
+                  onChange={handleChange}
+                  placeholder="What's your email?"
+                  required
+                  className="w-full bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-sm sm:text-base
+                  focus:outline-none focus:ring-2 focus:ring-blue-400/60 transition"
+                />
+              </div>
+
+              {/* MESSAGE */}
+              <div>
+                <label className="block text-sm text-gray-300 mb-1">
+                  Your Message
+                </label>
+                <textarea
+                  name="message"
+                  value={form.message}
+                  onChange={handleChange}
+                  placeholder="How can I help you?"
+                  rows="5"
+                  required
+                  className="w-full bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-sm sm:text-base resize-none
+                  focus:outline-none focus:ring-2 focus:ring-blue-400/60 transition"
+                />
+              </div>
+
+              {/* BUTTON */}
+              <button
+                type="submit"
+                disabled={loading}
+                className="mt-2 bg-blue-500 hover:bg-blue-600 text-white rounded-xl py-3 font-medium
+                transition flex items-center justify-center gap-2 disabled:opacity-70"
               >
-                {/* Name */}
-                <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-gray-700 font-medium mb-1 text-sm sm:text-base"
-                  >
-                    Your Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={form.name}
-                    onChange={handleChange}
-                    placeholder="What's your good name?"
-                    required
-                    className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base rounded-lg border border-gray-300 focus:ring-2 focus:ring-black focus:outline-none transition"
-                  />
-                </div>
+                {loading ? "Sending..." : "Send Message"}
+              </button>
+            </form>
 
-                {/* Email */}
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-gray-700 font-medium mb-1 text-sm sm:text-base"
-                  >
-                    Your Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={form.email}
-                    onChange={handleChange}
-                    placeholder="What's your email?"
-                    required
-                    className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base rounded-lg border border-gray-300 focus:ring-2 focus:ring-black focus:outline-none transition"
-                  />
-                </div>
-
-                {/* Message */}
-                <div>
-                  <label
-                    htmlFor="message"
-                    className="block text-gray-700 font-medium mb-1 text-sm sm:text-base"
-                  >
-                    Your Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={form.message}
-                    onChange={handleChange}
-                    placeholder="How can I help you?"
-                    rows="5"
-                    required
-                    className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base rounded-lg border border-gray-300 focus:ring-2 focus:ring-black focus:outline-none transition resize-y"
-                  />
-                </div>
-
-                {/* Button */}
-                <button
-                  type="submit"
-                  className="bg-black text-white py-2.5 sm:py-3 rounded-lg font-medium text-sm sm:text-base hover:bg-gray-800 transition flex items-center justify-center gap-2"
-                >
-                  {loading ? "Sending..." : "Send Message"}
-                </button>
-              </form>
-            </div>
           </div>
         </div>
       </div>

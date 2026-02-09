@@ -2,69 +2,78 @@ import React from "react";
 import { softwareLogo } from "../components/data";
 import { CgMail } from "react-icons/cg";
 import { IoIosContact } from "react-icons/io";
-import { FaWhatsapp } from "react-icons/fa";
+import { FaWhatsapp, FaGithub } from "react-icons/fa";
 import { CiLinkedin } from "react-icons/ci";
-import { FaInstagram } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
 
 const About = () => {
   return (
-    <div className="w-full flex flex-col items-center justify-center px-2 sm:px-4">
-      {/* Hero Section */}
-      <div className="relative mx-auto h-[280px] sm:h-[360px] md:h-[440px] lg:h-[500px] w-[95%] sm:w-[90%] md:w-[85%] lg:w-[80%] mb-4 sm:mb-6 md:mb-8">
-        {/* TOP TITLE */}
-        <div className="w-full h-[15%] sm:h-[12%] flex items-end justify-end">
-          <h1 className="font-bold mac-glow-text text-xs sm:text-sm md:text-base lg:text-[18px] pr-2 sm:pr-6 md:pr-10">
+    <div className="w-full flex flex-col items-center px-3 sm:px-6 lg:px-8">
+
+      <div className="relative mx-auto w-full max-w-6xl h-[300px] sm:h-[380px] md:h-[460px] lg:h-[520px] mb-10 rounded-3xl bg-linear-to-br from-white/5 to-white/0 backdrop-blur-md border border-white/10 overflow-hidden mt-5">
+        
+        {/* TOP LABEL */}
+        <div className="absolute top-4 right-6">
+          <h1 className="font-bold tracking-widest text-xs sm:text-sm text-gray-300">
             ENGINEER
           </h1>
         </div>
 
-        {/* MAIN CONTENT */}
-        <div className="w-full h-[85%] sm:h-[88%] relative flex flex-row items-start justify-center">
-          {/* TEXT */}
-          <div className="w-full flex flex-row justify-between px-1 sm:px-2">
-            <span
-              className="inline-block mac-glow-text text-[3.5rem] sm:text-[5rem] md:text-[7rem] lg:text-[10rem] xl:text-[12rem] leading-none mt-10"
-              style={{ transform: "scaleY(1.9)" }}
-            >
-              PORT
-            </span>
-            <span
-              className="inline-block mac-glow-text text-[3.5rem] sm:text-[5rem] md:text-[7rem] lg:text-[10rem] xl:text-[12rem] leading-none mt-10"
-              style={{ transform: "scaleY(1.9)" }}
-            >
-              FOLIO
-            </span>
-          </div>
-
-          {/* CENTER OBJECT / SCENE HOLDER */}
-          <div className="absolute bottom-12 sm:bottom-4 left-1/2 -translate-x-1/2 sm:left-[35%] sm:translate-x-0 md:left-[38%] lg:left-[40%] w-[35%] sm:w-[28%] md:w-[22%] lg:w-[18%] xl:w-[15%] h-full">
-          </div>
+        {/* CENTER TEXT */}
+        <div className="flex h-full items-center justify-center gap-6 sm:gap-10">
+          <span
+            className="mac-glow-text text-[4rem] sm:text-[6rem] md:text-[8rem] lg:text-[11rem] leading-none"
+            style={{ transform: "scaleY(1.6)" }}
+          >
+            PORT
+          </span>
+          <span
+            className="mac-glow-text text-[4rem] sm:text-[6rem] md:text-[8rem] lg:text-[11rem] leading-none"
+            style={{ transform: "scaleY(1.6)" }}
+          >
+            FOLIO
+          </span>
         </div>
       </div>
 
-      {/* Introduction Section */}
-      <div className="w-[95%] sm:w-[90%] min-h-[60px] sm:h-[85px] md:h-[100px] flex flex-col justify-center mb-4 sm:mb-6">
-        <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-500">
+      {/* INTRO */}
+      <div className="w-full max-w-6xl mb-6">
+        <h1 className="text-xl sm:text-2xl font-bold text-gray-400">
           INTRODUCTION
         </h1>
-        <h3 className="text-sm sm:text-base md:text-lg text-gray-400">
+        <p className="text-sm sm:text-base text-gray-500">
           About Me
-        </h3>
+        </p>
       </div>
 
-      {/* About Content Section */}
-      <div className="w-[95%] sm:w-[90%] min-h-[400px] sm:min-h-[350px] md:h-[350px] flex flex-col md:flex-row gap-4 md:gap-0 mb-6 sm:mb-8">
-        <div className="h-[200px] sm:h-[250px] md:h-full w-full md:w-[20%] relative flex items-center justify-center md:justify-start">
-          <div className="w-[90%] h-[80%] bg-gray-400 rounded-xl sm:rounded-2xl"></div>
+      {/*  ABOUT */}
+      <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-5 gap-6 mb-12">
+        
+        {/* IMAGE PLACEHOLDER */}
+        <div className="md:col-span-1 flex justify-center">
+          <div className="w-full h-[200px]  rounded-2xl bg-linear-to-br from-gray-500 to-gray-700 shadow-lg" />
         </div>
-        <div className="h-full w-full md:w-[80%] p-2 sm:p-3 flex flex-col justify-between">
-          <div className="w-full md:w-[90%] min-h-[100px] sm:h-[150px] bg-white/15 rounded-xl sm:rounded-2xl p-3 -mt-3">
-            <h1 className="text-[8px] sm:text-[11px] md:text-[12px] leading-relaxed mt">
-            I am a passionate and motivated software developer with a strong interest in building modern, user-focused web applications. Currently, I am learning the MERN stack, focusing on creating responsive and interactive frontend experiences while gradually strengthening my backend development skills. Alongside web development, I am actively improving my problem-solving abilities by learning Java and Data Structures & Algorithms, which helps me write efficient, scalable, and clean code. I am also gaining hands-on experience with MySQL, understanding database design, queries, and data management. I enjoy learning new technologies, building projects, and continuously improving my technical skills. I am eager to apply my knowledge in real-world projects and grow as a software developer.
-            </h1>
+
+        {/* TEXT + STACK */}
+        <div className="md:col-span-4 flex flex-col gap-6">
+
+          {/* ABOUT TEXT */}
+          <div className="bg-white/10 backdrop-blur-md border border-white/10 rounded-2xl p-5 shadow-md">
+            <p className="text-[11px] sm:text-sm md:text-base leading-relaxed text-gray-200">
+              I am a passionate and motivated software developer with a strong
+              interest in building modern, user-focused web applications.
+              Currently, I am learning the MERN stack, focusing on creating
+              responsive and interactive frontend experiences while gradually
+              strengthening my backend development skills. Alongside web
+              development, I am actively improving my problem-solving abilities
+              by learning Java and Data Structures & Algorithms. I am also gaining
+              hands-on experience with MySQL and database design. I enjoy
+              learning new technologies, building projects, and continuously
+              improving my technical skills.
+            </p>
           </div>
-          <div className="w-full md:w-[90%] min-h-[120px] sm:h-[120px] flex flex-row items-start justify-around flex-wrap sm:flex-nowrap gap-2 sm:gap-0 mt-3 ">
+
+          {/* TECH STACK */}
+          <div className=" rounded-2xl p-4 shadow-md">
             {softwareLogo.map((item, index) => {
               const logos = [
                 item.image1,
@@ -84,17 +93,17 @@ const About = () => {
               return (
                 <div
                   key={index}
-                  className="w-full flex flex-row justify-around items-center flex-wrap sm:flex-nowrap gap-2 sm:gap-0"
+                  className="flex flex-wrap justify-center sm:justify-between gap-4 "
                 >
-                  {logos.map((itemLogo, i) => (
-                    <div key={i} className="flex flex-col items-center">
+                  {logos.map((logo, i) => (
+                    <div key={i} className="flex flex-col items-center hover:bg-white/5 hover:backdrop-blur-md hover:border border-white/10 rounded-2xl duration-300">
                       <img
-                        src={itemLogo}
-                        alt={`box-${i}`}
-                        className="w-[45px] h-[45px] sm:w-[70px] sm:h-[70px] md:w-[90px] md:h-[90px] shadow-sm rounded-xl sm:rounded-2xl md:rounded-3xl shadow-gray-400 hover:scale-75 duration-300 bg-white"
+                        src={logo}
+                        alt={`tech-${i}`}
+                        className="w-14 h-14 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-2xl bg-white p-2 shadow hover:scale-90 transition duration-300"
                       />
                       {headings[i] && (
-                        <span className="text-white text-[9px] sm:text-[10px] md:text-sm mt-1 sm:mt-2 font-medium text-center">
+                        <span className="text-[10px] sm:text-xs md:text-sm mt-2 text-gray-200">
                           {headings[i]}
                         </span>
                       )}
@@ -104,95 +113,62 @@ const About = () => {
               );
             })}
           </div>
+
         </div>
       </div>
 
-      {/* Contact and Experience Section */}
-      <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-  {/* CONTACT SECTION */}
-  <div className="bg-white/5 backdrop-blur-md rounded-2xl p-4 sm:p-6 mb-6 shadow-md">
-    <h1 className="inline-block bg-white/15 px-6 py-1 rounded-full text-sm sm:text-base font-medium mb-4">
-      CONTACT
-    </h1>
+      {/*  CONTACT  */}
+      <div className="w-full max-w-6xl bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-6 mb-10 shadow-lg">
+        <h1 className="inline-block bg-white/15 px-6 py-1 rounded-full text-sm font-medium mb-6">
+          CONTACT
+        </h1>
 
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
-  {[
-    {
-      icon: <CgMail />,
-      label: "Email",
-      link: "mailto:shivamgupta73014@gmail.com",
-    },
-    {
-      icon: <IoIosContact />,
-      label: "Contact",
-      link: "tel:8002920913",
-    },
-    {
-      icon: <FaWhatsapp />,
-      label: "WhatsApp",
-      link: "https://wa.me/8002920913?text=Hi%20I%20visited%20your%20portfolio",
-    },
-    {
-      icon: <CiLinkedin />,
-      label: "LinkedIn",
-      link: "https://www.linkedin.com/in/shivam-gupta-22818b364/",
-    },
-    {
-      icon: <FaGithub />,
-      label: "Instagram",
-      link: "https://github.com/Shivam-Gupta-git",
-    },
-  ].map((item, index) => (
-    <a
-      key={index}
-      href={item.link}
-      target="_blank"
-      rel="noreferrer"
-      className="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 hover:bg-white/15 duration-300 shadow-sm hover:shadow-gray-400"
-    >
-      <span className="text-lg">{item.icon}</span>
-      <span className="text-gray-300 text-sm sm:text-base">
-        {item.label}
-      </span>
-    </a>
-  ))}
-</div>
-  </div>
-
-  {/* INTEREST + EXPERIENCE */}
-  <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-    {/* INTEREST */}
-    <div className="md:col-span-1 bg-white/5 backdrop-blur-md rounded-2xl p-4 sm:p-6 shadow-md">
-      <h1 className="inline-block bg-white/15 px-6 py-1 rounded-full text-sm sm:text-base font-medium mb-4">
-        INTEREST
-      </h1>
-
-      <div className="flex flex-wrap gap-2">
-        {["Listening Songs"].map((interest, i) => (
-          <span
-            key={i}
-            className="px-3 py-1 border border-white/20 rounded-full text-xs sm:text-sm text-gray-300"
-          >
-            #{interest}
-          </span>
-        ))}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          {[
+            { icon: <CgMail />, label: "Email", link: "mailto:shivamgupta73014@gmail.com" },
+            { icon: <IoIosContact />, label: "Contact", link: "tel:8002920913" },
+            { icon: <FaWhatsapp />, label: "WhatsApp", link: "https://wa.me/8002920913" },
+            { icon: <CiLinkedin />, label: "LinkedIn", link: "https://www.linkedin.com/in/shivam-gupta-22818b364/" },
+            { icon: <FaGithub />, label: "GitHub", link: "https://github.com/Shivam-Gupta-git" },
+          ].map((item, index) => (
+            <a
+              key={index}
+              href={item.link}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-4 px-5 py-4 rounded-2xl bg-white/5 hover:bg-white/15 transition shadow"
+            >
+              <span className="text-xl">{item.icon}</span>
+              <span className="text-gray-300">{item.label}</span>
+            </a>
+          ))}
+        </div>
       </div>
-    </div>
 
-    {/* EXPERIENCE */}
-    <div className="md:col-span-3 bg-white/5 backdrop-blur-md rounded-2xl p-4 sm:p-6 shadow-md">
-      <h1 className="inline-block bg-white/15 px-6 py-1 rounded-full text-sm sm:text-base font-medium mb-3">
-        EXPERIENCE
-      </h1>
+      {/*  INTEREST + EXPERIENCE */}
+      <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-4 gap-6 mb-16">
 
-      <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
-        I am currently a college student and do not have professional experience
-        yet. However, I am actively learning modern web technologies and building
-        projects to enhance my practical skills.
-      </p>
-    </div>
-  </div>
-</div>
+        <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 shadow">
+          <h1 className="inline-block bg-white/15 px-5 py-1 rounded-full text-sm mb-4">
+            INTEREST
+          </h1>
+          <div className="px-4 py-1 border border-white/20 rounded-full text-sm text-gray-300">
+            <h1>#Listening Songs</h1>
+          </div>
+        </div>
+
+        <div className="md:col-span-3 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 shadow">
+          <h1 className="inline-block bg-white/15 px-5 py-1 rounded-full text-sm mb-4">
+            EXPERIENCE
+          </h1>
+          <p className="text-gray-300 leading-relaxed">
+            I am currently a college student and do not have professional
+            experience yet. However, I am actively learning modern web
+            technologies and building projects to enhance my practical skills.
+          </p>
+        </div>
+
+      </div>
     </div>
   );
 };

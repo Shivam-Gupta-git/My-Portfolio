@@ -6,6 +6,9 @@ import RollingText from './RollingText'
 import SoftwareInfo from './SoftwareInfo'
 import ImageCards from './ImageCards'
 import Carousel from './Carousel'
+import GithubStatus from './GithubStatus'
+import GitHubLiveActivity from './GitHubLiveActivity'
+
 
 const Hero = memo(() => {
   const location = useLocation()
@@ -35,6 +38,8 @@ const Hero = memo(() => {
   <SoftwareInfo key={`software-info-${location.pathname}`}></SoftwareInfo>
   <ImageCards></ImageCards>
   <Carousel></Carousel>
+  <GithubStatus/>
+  <GitHubLiveActivity/>
 </div>
         {/* <ComputersCanvas></ComputersCanvas> */}
     </section>

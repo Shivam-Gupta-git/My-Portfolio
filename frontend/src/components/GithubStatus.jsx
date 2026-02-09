@@ -16,7 +16,7 @@ const GithubStatus = memo(() => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         
         {/* Contribution Graph */}
-        <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-md p-4 hover:shadow-xl transition">
+        <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-sm shadow-gray-600 p-4 hover:shadow-md transition">
           <div className="flex items-center gap-2 mb-3">
             <FaFire className="text-orange-500" />
             <h3 className="font-semibold text-gray-700 dark:text-gray-200">
@@ -31,7 +31,7 @@ const GithubStatus = memo(() => {
         </div>
 
         {/* GitHub Stats */}
-        <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-md p-4 hover:shadow-xl transition">
+        <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-sm shadow-gray-600 p-4 hover:shadow-md transition">
           <div className="flex items-center gap-2 mb-3">
             <FaCodeBranch className="text-blue-500" />
             <h3 className="font-semibold text-gray-700 dark:text-gray-200">

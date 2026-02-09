@@ -35,7 +35,7 @@ const GitHubLiveActivity = memo(() => {
         {events.map((event, index) => (
           <div
             key={index}
-            className="bg-white dark:bg-gray-900 rounded-xl p-4 shadow hover:shadow-lg transition"
+            className="bg-white dark:bg-gray-900 rounded-xl p-4  hover:shadow-md transition shadow shadow-gray-700"
           >
             <div className="flex items-center gap-2 mb-2">
               <FaCodeBranch className="text-blue-500" />
@@ -57,12 +57,12 @@ const GitHubLiveActivity = memo(() => {
       </div>
 
       {/* CTA */}
-      <div className="mt-6 text-center">
+      <div className="mt-6 text-center ">
         <a
           href="https://github.com/Shivam-Gupta-git"
           target="_blank"
           rel="noreferrer"
-          className="inline-block px-6 py-2 rounded-full bg-gray-900 text-white hover:bg-gray-700 transition"
+          className="inline-block px-6 py-2 rounded-full bg-gray-900 text-white hover:bg-gray-700 shadow-sm shadow-gray-700 transition"
         >
           Visit GitHub Profile →
         </a>

@@ -225,8 +225,8 @@ function SoftwareInfo() {
   }, []);
 
   return (
-    <div className='software-container w-full min-h-[450px] sm:min-h-[500px] md:h-[500px] flex items-center justify-center p-2 sm:p-3 md:p-5'>
-      <div className='w-[98%] sm:w-[95%] md:w-[90%] h-full flex flex-col lg:flex-row rounded-xl sm:rounded-2xl shadow-sm shadow-gray-500 overflow-hidden relative justify-between gap-3 sm:gap-4 lg:gap-0'>
+    <div className='software-container w-full min-h-[450px] sm:min-h-[500px] md:h-[500px] flex items-center justify-center p-2 sm:p-3 md:p-5 '>
+      <div className='w-[98%] sm:w-[95%] md:w-[90%] h-full flex flex-col lg:flex-row rounded-xl sm:rounded-2xl shadow-sm shadow-gray-500 overflow-hidden relative justify-between gap-3 sm:gap-4 lg:gap-0 bg-white/5 backdrop-blur-md '>
         <div className='w-full lg:w-[50%] h-full flex flex-col justify-around gap-2 sm:gap-3 md:gap-0 py-2 sm:py-0'>
 
           <div className='min-h-[50px] sm:min-h-[60px] w-full md:h-[70px] sm:w-[90%] relative flex ' ref={box1Ref}>

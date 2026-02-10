@@ -39,8 +39,8 @@ const Hero = memo(() => {
   <RollingText></RollingText>
   <SoftwareInfo key={`software-info-${location.pathname}`}></SoftwareInfo>
   <ImageCards></ImageCards>
-  <Carousel></Carousel>
   <GithubStatus/>
+  <Carousel></Carousel>
   <GitHubLiveActivity/>
 </div>
         {/* <ComputersCanvas></ComputersCanvas> */}

@@ -3,11 +3,11 @@ import { FaGithub, FaCodeBranch, FaFire } from "react-icons/fa";
 
 const GithubStatus = memo(() => {
   return (
-    <section className="w-full max-w-5xl mx-auto px-4 py-10">
+    <section className="w-full max-w-5xl mx-auto px-4 mt-12 sm:mt-20 md:mt-50">
       {/* Header */}
       <div className="flex items-center gap-3 mb-6">
-        <FaGithub className="text-3xl text-gray-800 dark:text-white" />
-        <h2 className="text-2xl font-bold text-gray-800 dark:text-white">
+        <FaGithub className="text-3xl  text-white" />
+        <h2 className="text-2xl font-bold  text-white">
           GitHub Activity
         </h2>
       </div>

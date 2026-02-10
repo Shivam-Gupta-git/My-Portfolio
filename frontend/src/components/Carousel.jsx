@@ -30,7 +30,7 @@ const Carousel = memo(() => {
   };
 
   return (
-    <div className="w-full flex items-center justify-center mt-12 sm:mt-20 md:mt-35 flex-col px-3 sm:px-4">
+    <div className="w-full flex items-center justify-center  flex-col px-3 sm:px-4">
       <div className="w-full sm:w-[95%] md:w-[90%] min-h-[50px] sm:min-h-[60px] md:h-[100px] flex items-center mt-4 sm:mt-6 md:mt-10">
         <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-center leading-tight px-2">A Passionate BFA Student Crafting Visual Narratives</h1>
       </div>

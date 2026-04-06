@@ -67,35 +67,51 @@ export const reactData = [
 export const nextJsData = [
   {
     id: 1,
-    title: " ",
-    description:" ",
-    link: " ",
-    images: [
-      " ",
-    ],
+    title: "Eco-Commerce Platform",
+    description: "A high-performance e-commerce solution built with Next.js 14, featuring server-side rendering, optimized image handling, and seamless Stripe integration for sustainability-focused brands.",
+    link: "https://github.com/",
+    images: ["/images/frontend6.png"],
+  },
+  {
+    id: 2,
+    title: "AI Matrix Dashboard",
+    description: "An interactive analytics dashboard leveraging Next.js API routes and real-time data streaming to visualize machine learning model performance and health metrics.",
+    link: "https://github.com/",
+    images: ["/images/frontend5.png"],
   }
 ]
 
 export const fullStackData = [
   {
     id: 1,
-    title: " ",
-    description:" ",
-    link: " ",
-    images: [
-      " ",
-    ],
+    title: "Nexus Social Engine",
+    description: "A complete MERN stack social media architecture featuring real-time messaging, protected routes, and an edge-case optimized notification system.",
+    link: "https://github.com/",
+    images: ["/images/frontend4.png"],
+  },
+  {
+    id: 2,
+    title: "CloudVault Storage",
+    description: "A secure, full-stack file management system with multi-factor authentication and encrypted AWS S3 bucket integration for enterprise-grade security.",
+    link: "https://github.com/",
+    images: ["/images/frontend3.png"],
   }
 ]
+
 export const javaData = [
   {
     id: 1,
-    title: " ",
-    description:" ",
-    link: " ",
-    images: [
-      " ",
-    ],
+    title: "FinTrack Enterprise",
+    description: "A robust Java-based financial tracking system designed for enterprise scalability, featuring multi-threading for rapid transaction processing and a Spring Boot backend.",
+    link: "https://github.com/",
+    images: ["/images/frontend2.png"],
+  },
+  {
+    id: 2,
+    title: "InventorySync Pro",
+    description: "A high-density inventory management solution built with modern Java frameworks, offering real-time synchronization across global warehouse locations.",
+    link: "https://github.com/",
+    images: ["/images/frontend1.png"],
   }
 ]
 

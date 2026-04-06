@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import { fullStackData } from "../components/data";
-import { MdCancel } from "react-icons/md";
+import { FiX, FiExternalLink } from "react-icons/fi";
+import { motion, AnimatePresence } from "framer-motion";
 
 function FullStack() {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
   const [selectedProject, setSelectedProject] = useState(null);
-
-
 
   const openModal = (image, project) => {
     setSelectedImage(image);
@@ -22,87 +21,97 @@ function FullStack() {
   };
 
   return (
-    <div className="w-full min-h-[400px] sm:min-h-[450px] md:min-h-[500px] flex flex-row gap-4 sm:gap-6 p-3 sm:p-4 md:p-6 overflow-x-auto hide-scrollbar">
-
+    <div className="w-full flex gap-6 sm:gap-8 px-2 sm:px-4 py-8 overflow-x-auto hide-scrollbar snap-x snap-mandatory">
       {fullStackData.map((item) => (
-        <div
-          key={item.id}
-          className="w-full flex  space-x-3 sm:space-x-4 p-2 sm:p-4 rounded-lg"
-        >
+        <div key={item.id} className="flex gap-6 sm:gap-8">
           {item.images.map((img, i) => (
-            <div
+            <motion.div
               key={i}
+              whileHover={{ y: -8 }}
               onClick={() => openModal(img, item)}
-              className="shrink-0 
-                w-[300px] h-[350px]
-                sm:w-[300px] sm:h-[400px]
-                md:w-[300px] md:h-[400px]
-                lg:w-[400px] lg:h-[400px]
-                border rounded-lg flex items-center justify-center p-2 sm:p-4 
-                bg-gray-100 cursor-pointer hover:scale-105 transition-transform"
+              className="shrink-0 w-[280px] h-[360px] sm:w-[320px] sm:h-[420px] premium-card p-6 flex flex-col items-center justify-center cursor-pointer bg-white relative overflow-hidden group snap-center"
             >
+              <div className="absolute inset-0 bg-gradient-to-tr from-slate-50 to-indigo-50/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              
               <img
                 src={img}
-                alt={`box-${i}`}
-                className="w-full h-full object-contain rounded-lg"
+                alt={`preview-${i}`}
+                className="w-full h-full object-contain rounded-xl relative z-10 transition-transform duration-500 group-hover:scale-105"
                 loading="lazy"
                 decoding="async"
               />
-            </div>
+
+              <div className="absolute bottom-6 right-6 w-10 h-10 bg-white shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-slate-100 rounded-full flex items-center justify-center opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 z-20">
+                <FiExternalLink className="text-indigo-600" />
+              </div>
+            </motion.div>
           ))}
         </div>
       ))}
 
-      {isOpen && selectedProject && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 px-3 sm:px-6">
-          <div
-            className="
-              bg-white rounded-lg relative 
-              w-full sm:w-[90%] md:w-[80%] lg:w-[70%]
-              h-auto md:h-[70%]
-              p-4 sm:p-6
-            "
+      <AnimatePresence>
+        {isOpen && selectedProject && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-slate-900/40 backdrop-blur-md flex items-center justify-center z-[100] px-4 sm:px-6"
+            onClick={closeModal}
           >
-            <button
-              className="absolute top-3 right-3 text-gray-500 hover:text-gray-800"
-              onClick={closeModal}
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.95, opacity: 0, y: 20 }}
+              onClick={(e) => e.stopPropagation()}
+              className="bg-white rounded-3xl relative w-full sm:w-[90%] md:w-[85%] lg:w-[75%] max-w-5xl max-h-[90vh] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.15)] flex flex-col md:flex-row"
             >
-              <MdCancel className="text-2xl sm:text-3xl" />
-            </button>
+              {/* Close Button */}
+              <button
+                className="absolute top-4 sm:top-6 right-4 sm:right-6 w-10 h-10 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-full flex items-center justify-center transition-colors z-10"
+                onClick={closeModal}
+              >
+                <FiX className="text-xl" />
+              </button>
 
-            <div className="w-full h-full flex flex-col md:flex-row gap-4">
-              <div className="w-full md:w-1/2 h-[220px] sm:h-[280px] md:h-full flex items-center justify-center">
+              {/* Image Section */}
+              <div className="w-full md:w-1/2 h-[250px] sm:h-[300px] md:h-auto bg-[#F8F9FC] flex items-center justify-center p-8 border-b md:border-b-0 md:border-r border-slate-100">
                 <img
                   src={selectedImage}
                   alt={selectedProject.title}
-                  className="w-full h-full object-contain rounded-lg"
+                  className="w-full h-full object-contain drop-shadow-sm"
                   loading="eager"
                 />
               </div>
 
-              <div className="w-full md:w-1/2 h-auto md:h-full p-2 sm:p-4 flex items-start flex-col border">
-                <h1 className="text-gray-700 font-medium text-sm lg:text-2xl sm:text-base leading-relaxed">
+              {/* Content Section */}
+              <div className="w-full md:w-1/2 p-8 sm:p-10 flex flex-col justify-center bg-white overflow-y-auto">
+                <div className="inline-flex items-center w-max px-3 py-1 bg-indigo-50 border border-indigo-100 text-indigo-600 text-xs font-bold uppercase tracking-widest rounded-full mb-4">
+                  Project Detail
+                </div>
+                
+                <h2 className="text-[#0f172a] font-extrabold text-2xl sm:text-3xl leading-tight mb-4 tracking-tight">
                   {selectedProject.title}
-                </h1>
+                </h2>
 
-                <p className="text-gray-700 text-[8px] sm:text-base lg:text-[15px] leading-relaxed">
+                <p className="text-[#64748b] text-sm sm:text-base leading-relaxed mb-8 flex-1">
                   {selectedProject.description}
                 </p>
 
-                <a
-                  href={selectedProject.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-blue-400 px-4 py-1 rounded-3xl text-white shadow-sm shadow-gray-300 mt-2"
-                >
-                  Explore
-                </a>
+                <div className="mt-auto pt-4">
+                  <a
+                    href={selectedProject.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary inline-flex shadow-lg shadow-indigo-500/20 w-fit"
+                  >
+                    View Live Site <FiExternalLink />
+                  </a>
+                </div>
               </div>
-            </div>
-          </div>
-        </div>
-      )}
-
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

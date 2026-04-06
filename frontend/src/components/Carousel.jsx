@@ -1,96 +1,135 @@
-import React, { useState, useEffect, memo, useMemo } from "react";
+import React, { useState, memo, useMemo } from "react";
+import { FiArrowLeft, FiArrowRight, FiArrowUpRight } from "react-icons/fi";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Carousel = memo(() => {
   const sections = useMemo(() => [
     [
-      { title: "Project 1", image: "/images/frontend6.png", link: "https://study-mate-flame.vercel.app" },
-      { title: "Project 2", image: "/images/frontend3.png", link: "https://java-script-project-alpha.vercel.app" },
-      { title: "Project 3", image: "/images/frontend5.png", link: "https://java-script-project-kqee.vercel.app" },
-      { title: "Project 4", image: "/images/frontend4.png", link: "https://pizza-booking-web.vercel.app/Home.html" },
+      { title: "StudyMate Education Platform", category: "Web App", image: "/images/frontend6.png", link: "https://study-mate-flame.vercel.app" },
+      { title: "Advanced JS Projects", category: "Interactive", image: "/images/frontend3.png", link: "https://java-script-project-alpha.vercel.app" },
+      { title: "Dynamic Logic App", category: "Frontend", image: "/images/frontend5.png", link: "https://java-script-project-kqee.vercel.app" },
+      { title: "Pizza Booking Flow", category: "E-Commerce", image: "/images/frontend4.png", link: "https://pizza-booking-web.vercel.app/Home.html" },
     ],
     [
-      { title: "Project 5", image: "/images/project5.jpg", link: "https://example.com/5" },
-      { title: "Project 6", image: "/images/project6.jpg", link: "https://example.com/6" },
-      { title: "Project 7", image: "/images/project7.jpg", link: "https://example.com/7" },
-      { title: "Project 8", image: "/images/project8.jpg", link: "https://example.com/8" },
+      { title: "React Dashboard", category: "UI/UX", image: "/images/project5.jpg", link: "#" },
+      { title: "Express API Setup", category: "Backend", image: "/images/project6.jpg", link: "#" },
+      { title: "MongoDB Arch", category: "Database", image: "/images/project7.jpg", link: "#" },
+      { title: "NextJS Template", category: "Full-Stack", image: "/images/project8.jpg", link: "#" },
     ],
   ], []);
 
   const [currentSection, setCurrentSection] = useState(0);
-  const [hoveredIndex, setHoveredIndex] = useState(null);
 
   const handlePrev = () => {
     setCurrentSection((prev) => (prev - 1 + sections.length) % sections.length);
-    setHoveredIndex(null);
   };
 
   const handleNext = () => {
     setCurrentSection((prev) => (prev + 1) % sections.length);
-    setHoveredIndex(null);
   };
 
   return (
-    <div className="w-full flex items-center justify-center  flex-col px-3 sm:px-4">
-      <div className="w-full sm:w-[95%] md:w-[90%] min-h-[50px] sm:min-h-[60px] md:h-[100px] flex items-center mt-4 sm:mt-6 md:mt-10">
-        <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-center leading-tight px-2">A Passionate BFA Student Crafting Visual Narratives</h1>
-      </div>
-
-      <div className="w-full sm:w-[95%] md:w-[85%] mx-auto py-6 sm:py-10 relative">
-        <div className="flex gap-2 sm:gap-4 justify-end mb-4 sm:mb-0 lg:mb-3">
-          <button
-            onClick={handlePrev}
-            className="bg-gray-700 text-white p-2 sm:p-3 rounded-full z-10 hover:bg-gray-800 transition text-lg sm:text-xl"
-            aria-label="Previous"
+    <div id="work" className="w-full bg-[#f8fafc] py-16 overflow-hidden relative">
+      <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12">
+        
+        {/* Header & Controls */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="flex flex-col max-w-2xl"
           >
-        &#8592;
-          </button>
-          <button
-            onClick={handleNext}
-            className="bg-gray-700 text-white p-2 sm:p-3 rounded-full z-10 hover:bg-gray-800 transition text-lg sm:text-xl"
-            aria-label="Next"
-          >
-        &#8594;
-          </button>
-        </div>
+            <span className="section-label self-start">Showcase</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0f172a] mt-4 mb-3 tracking-tight">
+              Selected Works
+            </h2>
+            <p className="text-[#64748b] text-base sm:text-lg">
+              A curated collection of my recent projects, demonstrating my focus on elegant design and robust development.
+            </p>
+          </motion.div>
 
-        <div className="flex gap-2 sm:gap-4 overflow-x-auto hide-scrollbar pb-2 sm:pb-0">
-          {sections[currentSection].map((box, index) => (
-            <a
-              key={index}
-              href={box.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
-              onTouchStart={() => setHoveredIndex(index)}
-              onTouchEnd={() => setHoveredIndex(null)}
-              className={`shrink-0 w-[200px] sm:w-[250px] md:flex-1 md:h-[350px] lg:h-[400px] xl:h-[450px] h-[250px] sm:h-[300px] rounded-lg cursor-pointer overflow-hidden relative shadow-lg transition-all duration-500 border`}
-              style={{
-                flex: 
-                   (hoveredIndex === null ? 1 : hoveredIndex === index ? 3 : 0.8)
-                
-              }}
+          <motion.div 
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="flex gap-3"
+          >
+            <button
+              onClick={handlePrev}
+              className="w-12 h-12 rounded-full flex items-center justify-center bg-white border border-slate-200 text-slate-600 hover:bg-[#0f172a] hover:border-[#0f172a] hover:text-white transition-all shadow-sm"
+              aria-label="Previous"
             >
-              {/* Image */}
-              <img
-                src={box.image}
-                alt={box.title}
-                className="w-full h-full object-cover"
-                loading="lazy"
-                decoding="async"
-              />
-              {/* Title overlay */}
-              <div className="absolute bottom-0 w-full bg-black/50 text-white text-center py-1.5 sm:py-2 font-semibold text-xs sm:text-sm md:text-base">
-                {box.title}
-              </div>
-            </a>
-          ))}
+              <FiArrowLeft className="text-xl" />
+            </button>
+            <button
+              onClick={handleNext}
+              className="w-12 h-12 rounded-full flex items-center justify-center bg-white border border-slate-200 text-slate-600 hover:bg-[#0f172a] hover:border-[#0f172a] hover:text-white transition-all shadow-sm"
+              aria-label="Next"
+            >
+              <FiArrowRight className="text-xl" />
+            </button>
+          </motion.div>
         </div>
+
+        {/* Featured Bento Grid UI */}
+        <AnimatePresence mode="wait">
+          <motion.div 
+            key={currentSection}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.98 }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[300px]"
+          >
+            {sections[currentSection].map((box, index) => (
+              <a
+                key={index}
+                href={box.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`group flex flex-col premium-card overflow-hidden relative cursor-pointer ${
+                  index === 0 
+                    ? "md:col-span-2 lg:col-span-2 lg:row-span-2 h-[600px] lg:h-full" 
+                    : "h-full"
+                }`}
+              >
+                {/* Image Container */}
+                <div className="w-full h-full absolute inset-0 overflow-hidden bg-slate-100">
+                  <img
+                    src={box.image}
+                    alt={box.title}
+                    className="w-full h-full object-cover transition-transform duration-[800ms] group-hover:scale-[1.05]"
+                    loading="lazy"
+                  />
+                  {/* Subtle dark gradient overlay for text readability */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                  
+                  {/* Hover overlay icon */}
+                  <div className="absolute top-6 right-6 w-12 h-12 bg-white/10 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center translate-y-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 shadow-sm">
+                    <FiArrowUpRight className="text-white text-xl" />
+                  </div>
+                </div>
+
+                {/* Text Info - Absolute Positioned over Image */}
+                <div className="absolute bottom-0 left-0 w-full p-6 sm:p-8 flex flex-col z-10">
+                  <span className="inline-flex w-max px-3 py-1 bg-indigo-500/20 backdrop-blur-sm border border-indigo-500/30 text-indigo-200 text-xs font-semibold uppercase tracking-wider rounded-full mb-3 shadow-sm">
+                    {box.category}
+                  </span>
+                  <h3 className={`text-white font-bold leading-tight group-hover:text-indigo-300 transition-colors ${
+                    index === 0 ? "text-2xl sm:text-4xl" : "text-xl sm:text-2xl"
+                  }`}>
+                    {box.title}
+                  </h3>
+                </div>
+              </a>
+            ))}
+          </motion.div>
+        </AnimatePresence>
+
       </div>
     </div>
   );
 });
 
 export default Carousel;
-
-// flex: !isMobile ? (hoveredIndex === null ? 1 : hoveredIndex === index ? 3 : 0.8) : undefine

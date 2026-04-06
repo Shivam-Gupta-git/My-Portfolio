@@ -9,21 +9,6 @@ function MacContainerMobile() {
   const [scrollProgress, setScrollProgress] = useState(0)
   const containerRef = useRef(null)
 
-  // Listen to window scroll instead of ScrollControls
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight
-      const progress = Math.min(scrollTop / (docHeight * 0.1), 1) // Use first 30% of page scroll
-      setScrollProgress(progress)
-    }
-
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    handleScroll() // Initial call
-    
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
   // Memoize meshes to avoid recreating on every render
   const meshes = useMemo(() => {
     const meshMap = {}
@@ -37,7 +22,7 @@ function MacContainerMobile() {
     return meshMap
   }, [model])
 
-  // Initialize mesh properties once when component mounts or meshes change
+  // Initialize mesh properties once
   useEffect(() => {
     if (meshes.screen) {
       meshes.screen.rotation.x = THREE.MathUtils.degToRad(180)
@@ -46,22 +31,46 @@ function MacContainerMobile() {
     if (meshes.matte && meshes.matte.material) {
       meshes.matte.material.map = image
       meshes.matte.material.emissiveIntensity = 0
-      meshes.matte.material.metalness = 0
-      meshes.matte.material.roughness = 1
       meshes.matte.material.needsUpdate = true
     }
   }, [meshes, image])
 
-  useFrame(() => {
+  const targetRotationRef = useRef(180)
+  const currentRotationRef = useRef(180)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY
+      // Open smoothly within the first 300px
+      const threshold = 300 
+      const progress = Math.min(scrollTop / threshold, 1)
+      
+      // Start 70% open (180 - 0.7 * 85 ~= 120), animate to 100% open (95)
+      const baseProgress = 0.7
+      const effectiveProgress = baseProgress + (progress * (1 - baseProgress))
+      targetRotationRef.current = 180 - effectiveProgress * 85
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll()
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  useFrame((state, delta) => {
     if (meshes.screen) {
-      // Animate screen opening based on scroll progress
-      meshes.screen.rotation.x = THREE.MathUtils.degToRad(180 - scrollProgress * 90)
+      // Smoothly lerp towards the target rotation for a premium feel
+      currentRotationRef.current = THREE.MathUtils.lerp(
+        currentRotationRef.current,
+        targetRotationRef.current,
+        0.1
+      )
+      meshes.screen.rotation.x = THREE.MathUtils.degToRad(currentRotationRef.current)
     }
   })
 
-  // Mobile positioning and scaling
-  const position = [0, -3, 15]
-  const scale = 0.6
+  // Lowered the Mac model even further for a centered vertical look
+  const position = [0, -15, 18] 
+  const scale = 0.7 
 
   return (
     <group position={position} scale={scale}>

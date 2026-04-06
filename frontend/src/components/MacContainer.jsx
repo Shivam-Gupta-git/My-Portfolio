@@ -37,7 +37,7 @@ function MacContainer() {
     if (meshes.screen) {
       meshes.screen.rotation.x = THREE.MathUtils.degToRad(180)
     }
-    
+
     if (meshes.matte && meshes.matte.material) {
       meshes.matte.material.map = image
       meshes.matte.material.emissiveIntensity = 0
@@ -64,6 +64,6 @@ function MacContainer() {
       <primitive object={model.scene}></primitive>
     </group>
   )
-} 
+}
 
 export default MacContainer 

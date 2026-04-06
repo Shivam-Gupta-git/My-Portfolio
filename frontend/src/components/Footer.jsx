@@ -1,52 +1,67 @@
 import React from 'react'
 import { CgMail } from "react-icons/cg";
 import { IoIosContact } from "react-icons/io";
-import { FaWhatsapp } from "react-icons/fa";
+import { FaWhatsapp, FaGithub } from "react-icons/fa";
 import { CiLinkedin } from "react-icons/ci";
-import { FaGithub } from "react-icons/fa";
-import { BsCCircle } from "react-icons/bs";
 
 function Footer() {
   return (
-    <div className='w-full mt-16 sm:mt-20 bg-white/5 px-3 sm:px-6'>
+    <footer className='w-full bg-white border-t border-slate-100 py-10 overflow-hidden'>
+      <div className='max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12'>
 
-      <hr className='mt-4 opacity-40' />
+        {/* Top: Logo + Tagline */}
+        <div className='flex flex-col md:flex-row items-start justify-between gap-10 mb-8'>
+          <div className="max-w-sm">
+            <h3 className='font-bold text-3xl font-["Plus_Jakarta_Sans"] text-[#111827] tracking-tight'>
+              Shivam<span className='text-indigo-500'>.</span>
+            </h3>
+            <p className='text-base text-[#6B7280] mt-4 leading-relaxed'>
+              A passionate engineer crafting beautiful, performant, and reliable web experiences.
+            </p>
+          </div>
 
-      {/* SOCIAL ICONS */}
-      <div className='w-full mt-6 flex flex-wrap justify-center items-center gap-4 sm:gap-5'>
-        <a href="mailto:shivamgupta73014@gmail.com" className='bg-white/15 p-2 rounded-full hover:shadow-sm shadow-gray-300 duration-300'>
-          <CgMail className='text-2xl sm:text-3xl' />
-        </a>
-        <a href="tel:8002920913" className='bg-white/15 p-2 rounded-full hover:shadow-sm shadow-gray-300 duration-300'>
-          <IoIosContact className='text-2xl sm:text-3xl' />
-        </a>
-        <a href="https://wa.me/8002920913" className='bg-white/15 p-2 rounded-full hover:shadow-sm shadow-gray-300 duration-300'>
-          <FaWhatsapp className='text-2xl sm:text-3xl' />
-        </a>
-        <a href="https://www.linkedin.com/in/shivam-gupta-22818b364/" className='bg-white/15 p-2 rounded-full hover:shadow-sm shadow-gray-300 duration-300'>
-          <CiLinkedin className='text-2xl sm:text-3xl' />
-        </a>
-        <a href="https://github.com/Shivam-Gupta-git" className='bg-white/15 p-2 rounded-full hover:shadow-sm shadow-gray-300 duration-300'>
-        <FaGithub className='text-2xl sm:text-3xl'/>
-        </a>
+          {/* Social Icons */}
+          <div className='flex flex-col md:items-end'>
+            <h4 className="text-sm font-bold text-[#111827] uppercase tracking-wider mb-4">Connect</h4>
+            <div className='flex items-center gap-3'>
+              {[
+                { href: "mailto:shivamgupta73014@gmail.com", icon: <CgMail /> },
+                { href: "tel:8002920913", icon: <IoIosContact /> },
+                { href: "https://wa.me/8002920913", icon: <FaWhatsapp /> },
+                { href: "https://www.linkedin.com/in/shivam-gupta-22818b364/", icon: <CiLinkedin /> },
+                { href: "https://github.com/Shivam-Gupta-git", icon: <FaGithub /> },
+              ].map((item, i) => (
+                <a
+                  key={i}
+                  href={item.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className='w-12 h-12 flex items-center justify-center rounded-full bg-[#f8fafc] border border-slate-200 text-slate-500 hover:bg-[#111827] hover:border-[#111827] hover:text-white transition-all duration-300 text-xl shadow-sm'
+                >
+                  {item.icon}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className='w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent mb-8'></div>
+
+        {/* Bottom: Links + Copyright */}
+        <div className='flex flex-col sm:flex-row items-center justify-between gap-6'>
+          <p className='text-sm text-slate-500 font-medium'>
+            © {new Date().getFullYear()} Shivam Kumar. All Rights Reserved.
+          </p>
+          
+          <div className='flex flex-wrap justify-center gap-6 sm:gap-8 text-sm font-semibold text-slate-500'>
+            <span className='hover:text-[#111827] cursor-pointer transition-colors'>Terms & Conditions</span>
+            <span className='hover:text-[#111827] cursor-pointer transition-colors'>Privacy Policy</span>
+            <span className='hover:text-[#111827] cursor-pointer transition-colors'>Disclosures</span>
+          </div>
+        </div>
+
       </div>
-
-      {/* LINKS */}
-      <div className='w-full mt-6 flex flex-wrap justify-center gap-2 sm:gap-3 text-sm sm:text-base md:text-lg text-center'>
-        <span>Terms & Condition</span>
-        <span className="hidden sm:inline">|</span>
-        <span>Privacy Policy</span>
-        <span className="hidden sm:inline">|</span>
-        <span>Disclosures</span>
-      </div>
-
-      {/* COPYRIGHT */}
-      <div className='w-full flex items-center justify-center gap-1 mt-6 pb-6 text-sm sm:text-base'>
-        <BsCCircle />
-        <p>All Rights Reserved</p>
-      </div>
-
-    </div>
+    </footer>
   )
 }
 

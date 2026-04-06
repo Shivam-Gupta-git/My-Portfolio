@@ -3,22 +3,14 @@ import { FiDownload } from "react-icons/fi";
 
 function CV() {
   return (
-    <div className="w-full flex justify-start py-10 px-18">
+    <div className="w-full flex justify-start py-8 sm:py-10 px-6 sm:px-12 md:px-18 bg-slate-50">
       <a
         href="https://drive.google.com/uc?export=download&id=FILE_ID"
         target="_blank"
         rel="noopener noreferrer"
-        className="
-          inline-flex items-center gap-2
-          px-7 py-3 rounded-xl
-          bg-white/10 backdrop-blur-md
-          border border-white/20
-          text-white font-medium
-          hover:bg-white/20
-          transition-all duration-300
-        "
+        className="btn-primary text-sm sm:text-base"
       >
-        <FiDownload />
+        <FiDownload className="text-lg" />
         Download CV
       </a>
     </div>

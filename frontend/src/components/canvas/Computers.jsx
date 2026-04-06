@@ -1,13 +1,12 @@
 import React, { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF, Html } from "@react-three/drei";
-import { useLocation } from "react-router-dom";
 
 // ✅ Clean Loader (NO div directly inside Canvas)
 const CanvasLoader = () => {
   return (
     <Html center>
-      <span style={{ color: "white", fontSize: "16px" }}>Loading...</span>
+      <span style={{ color: "black", fontSize: "16px" }}>Loading...</span>
     </Html>
   );
 };
@@ -59,7 +58,6 @@ const Computers = ({ isMobile, isTablet }) => {
 const ComputersCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [isTablet, setIsTablet] = useState(false);
-  const location = useLocation();
 
   useEffect(() => {
     const checkScreenSize = () => {
@@ -81,7 +79,6 @@ const ComputersCanvas = () => {
   return (
     <div className="w-full h-full">
       <Canvas
-        key={`computers-canvas-${location.pathname}`}
         frameloop="demand"
         shadows
         dpr={isMobile ? [1, 1.5] : [1, 2]}
@@ -104,5 +101,3 @@ const ComputersCanvas = () => {
 };
 
 export default ComputersCanvas;
-
-// /homeCharacter/isometric_bedroom.glb

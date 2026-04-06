@@ -21,7 +21,9 @@ function App() {
       
       <main className="w-full flex flex-col items-center">
         <section id="home" className="w-full">
-          <Home />
+          <Suspense fallback={<div className="flex items-center justify-center min-h-screen bg-slate-50"><div className="w-8 h-8 border-4 border-indigo-500 border-t-transparent rounded-full animate-spin"></div></div>}>
+            <Home />
+          </Suspense>
         </section>
 
         <Suspense fallback={<div className="flex items-center justify-center min-h-[50vh]"><div className="w-8 h-8 border-4 border-indigo-500 border-t-transparent rounded-full animate-spin"></div></div>}>

@@ -5,14 +5,14 @@ import RollingText from './RollingText'
 import SoftwareInfo from './SoftwareInfo'
 import CV from './CV'
 
-const Hero = memo(() => {
+const Hero = memo(({ isMobile }) => {
   return (
     <>
-      <Mack />
+      <Mack isMobile={isMobile} />
 
       <section className="relative">
         {/* Scroll indicator */}
-        <div className="absolute bottom-20 sm:bottom-1 w-full flex justify-center items-center z-30">
+        <div className={`w-full flex justify-center items-center z-30 ${isMobile ? "py-8" : "absolute bottom-1"}`}>
           <a href="#about">
             <div className="w-[25px] h-[45px] sm:w-[30px] sm:h-[55px] rounded-3xl border-2 sm:border-[2.5px] border-slate-400 flex justify-center items-start p-1.5 sm:p-2 cursor-pointer hover:border-indigo-500 transition-colors">
               <motion.div

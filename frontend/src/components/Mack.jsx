@@ -1,8 +1,7 @@
-import React, { useRef, useMemo, useState, useEffect, memo } from "react";
+import React, { useRef, useMemo, memo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Environment, OrbitControls, ScrollControls } from "@react-three/drei";
 import MacContainer from "./MacContainer";
-import MacContainerMobile from "./MacContainerMobile";
 import { motion } from "framer-motion";
 
 const Particles = React.memo(({ count = 200, isMobile = false }) => {
@@ -47,32 +46,23 @@ const Particles = React.memo(({ count = 200, isMobile = false }) => {
   );
 });
 
-function Mack() {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
-
-  const cameraFov = isMobile ? 22 : window.innerWidth < 1024 ? 18 : 14;
-  const cameraPosition = isMobile
-    ? [0, -8, 160]
+function Mack({ isMobile }) {
+  const cameraFov = useMemo(() => isMobile ? 22 : window.innerWidth < 1024 ? 18 : 14, [isMobile]);
+  const cameraPosition = useMemo(() => isMobile
+    ? [0, 0, 140]
     : window.innerWidth < 1024
       ? [0, -10, 200]
-      : [0, -12, 240];
+      : [0, -12, 240], [isMobile]);
 
   return (
     <>
-      <div id="home" className={`w-full ${isMobile ? "h-[900px]" : "h-screen"} relative bg-[#F8F9FC] overflow-hidden`}>
+      <div id="home" className={`w-full ${isMobile ? "min-h-[500px] py-20" : "h-screen"} relative bg-[#F8F9FC] overflow-hidden flex items-center justify-center`}>
         {/* Subtle blur background gradients for premium feel */}
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-indigo-200/40 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
         <div className="absolute top-0 right-1/4 w-96 h-96 bg-blue-200/40 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
 
         {/* Text overlay */}
-        <div className="w-full absolute flex flex-col items-center top-28 xs:top-32 sm:top-24 md:top-28 left-1/2 -translate-x-1/2 px-4 sm:px-6 z-10 pointer-events-none">
+        <div className={`w-full ${isMobile ? "relative mt-0" : "absolute top-28 xs:top-32 sm:top-24 md:top-28"} flex flex-col items-center left-1/2 -translate-x-1/2 px-4 sm:px-6 z-10 pointer-events-none`}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -105,30 +95,30 @@ function Mack() {
           </motion.div>
         </div>
 
-        {/* Canvas */}
-        <div className="absolute inset-0 z-0">
-          <Canvas
-            camera={{ fov: cameraFov, position: cameraPosition }}
-            gl={{ preserveDrawingBuffer: true, antialias: true, powerPreference: "high-performance" }}
-            dpr={isMobile ? [1, 1.5] : [1, 2]}
-            performance={{ min: 0.5 }}
-            style={{ touchAction: isMobile ? "auto" : "none" }}
-          >
-            <OrbitControls enableZoom={false} autoRotate={false} enableRotate={false} />
-            <Environment
-              files="https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/studio_small_09_1k.hdr"
-              preset="sunset"
-            />
-            <Particles count={isMobile ? 120 : 250} isMobile={isMobile} />
-            {isMobile ? (
-              <MacContainerMobile />
-            ) : (
-              <ScrollControls pages={1} damping={0.25}>
-                <MacContainer />
-              </ScrollControls>
-            )}
-          </Canvas>
-        </div>
+        {/* Canvas - Hidden on mobile to remove the gap and improve performance */}
+        {!isMobile && (
+          <div className="absolute inset-0 z-0 text-center flex items-center justify-center">
+            <Canvas
+              camera={{ fov: cameraFov, position: cameraPosition }}
+              gl={{ preserveDrawingBuffer: true, antialias: true, powerPreference: "high-performance" }}
+              dpr={[1, 2]}
+              performance={{ min: 0.5 }}
+              style={{ touchAction: "none" }}
+            >
+              <React.Suspense fallback={null}>
+                <OrbitControls enableZoom={false} autoRotate={false} enableRotate={false} />
+                <Environment
+                  files="https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/studio_small_09_1k.hdr"
+                  preset="sunset"
+                />
+                <Particles count={250} isMobile={false} />
+                <ScrollControls pages={1} damping={0.25}>
+                  <MacContainer />
+                </ScrollControls>
+              </React.Suspense>
+            </Canvas>
+          </div>
+        )}
       </div>
     </>
   );

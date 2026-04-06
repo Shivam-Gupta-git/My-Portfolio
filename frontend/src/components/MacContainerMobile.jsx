@@ -35,8 +35,8 @@ function MacContainerMobile() {
     }
   }, [meshes, image])
 
-  const targetRotationRef = useRef(180)
-  const currentRotationRef = useRef(180)
+  const targetRotationRef = useRef(110)
+  const currentRotationRef = useRef(150)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -69,8 +69,8 @@ function MacContainerMobile() {
   })
 
   // Lowered the Mac model even further for a centered vertical look
-  const position = [0, -15, 18] 
-  const scale = 0.7 
+  const position = [0, -7, 15] 
+  const scale = 0.65 
 
   return (
     <group position={position} scale={scale}>

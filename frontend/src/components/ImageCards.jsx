@@ -58,7 +58,7 @@ const ImageCards = memo(function ImageCards() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="w-full mt-10 sm:mt-12 group perspective-1000"
+          className="w-full mt-10 sm:mt-12 group"
         >
           <div className="premium-card p-4 sm:p-6 lg:p-8 min-h-[400px] w-full flex items-center justify-center bg-white border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-[32px] hover:shadow-[0_20px_40px_rgb(79,70,229,0.06)] transition-all duration-500">
             <Suspense fallback={

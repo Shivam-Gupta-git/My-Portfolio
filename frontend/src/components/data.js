@@ -71,7 +71,7 @@ export const nextJsData = [
 export const fullStackData = [
   {
     id: 1,
-    title: "Study Mate",
+    title: "High Auth System",
     description:`I built a secure and modern authentication system with a premium React UI and complete user authorization flow.
 
     Core Features:
@@ -118,7 +118,36 @@ export const fullStackData = [
     `,
     link: "https://github.com/Shivam-Gupta-git/Login-Authentication-",
     images: [
-      "/images/authentication.png",
+      "/images/authontication.png",
+    ],
+  },
+  {
+    id: 2,
+    title: "SHOPLY || MODERN FAISHON",
+    description:`I recently developed a full-featured e-commerce website using the MERN stack (MongoDB, Express.js, React.js, Node.js), integrating modern design, user-friendly functionality, and a responsive interface. This project demonstrates a complete workflow from front-end shopping experience to back-end data management.
+
+    Key Features:
+      •	User Authentication: Secure login and signup with JWT token-based authentication.
+      •	Product Catalog: Browse, search, filter, and sort products with detailed product pages.
+      •	Shopping Cart & Wishlist: Add, remove, and manage products with dynamic cart and wishlist functionality.
+      •	Order Management: Place orders, view order history, and track order status.
+      •	Admin Dashboard: Admin panel to add, update, and delete products, and manage users.
+      •	Responsive Design: Mobile-first layout with Tailwind CSS ensuring seamless experience across devices.
+      •	Secure Backend: Express.js & Node.js handle API requests securely, with MongoDB for database management.
+      •	Enhanced UX/UI: Modern fonts, color schemes, smooth animations, and clean layout inspired by top e-commerce platforms.
+    
+    Tech Stack & Tools:
+      •	Front-End: React.js, Tailwind CSS, React Router, Redux (optional for state management)
+      •	Back-End: Node.js, Express.js, JWT authentication, REST APIs
+      •	Database: MongoDB (with Mongoose)
+      •	Other Tools: Axios for API calls, React Icons for UI, and environment variables for security
+    
+    This project allowed me to implement real-world e-commerce functionalities, including product management, secure authentication, and responsive design. It reflects both my full-stack development skills and understanding of modern web architecture.
+    
+    `,
+    link: "https://github.com/Shivam-Gupta-git/Full-Stack-Ecommerce-Web",
+    images: [
+      "/images/ecommerce1.png",
     ],
   }
 ]

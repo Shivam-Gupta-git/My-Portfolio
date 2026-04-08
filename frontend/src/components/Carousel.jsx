@@ -7,7 +7,7 @@ const Carousel = memo(() => {
     [
       { title: "StudyMate Education Platform", category: "Web App", image: "/images/frontend6.png", link: "https://study-mate-flame.vercel.app" },
       { title: "modern authentication system", category: "Interactive", image: "/images/authontication.png", link: "https://github.com/Shivam-Gupta-git/Login-Authentication-" },
-      { title: "Dynamic Logic App", category: "Frontend", image: "/images/ecommerce.png", link: "https://java-script-project-kqee.vercel.app" },
+      { title: "Full-Stack-Ecommerce-Web", category: "Full-Stack", image: "/images/ecommerce.png", link: "https://github.com/Shivam-Gupta-git/Full-Stack-Ecommerce-Web" },
       { title: "Pizza Booking Flow", category: "E-Commerce", image: "/images/frontend4.png", link: "https://pizza-booking-web.vercel.app/Home.html" },
     ],
     [

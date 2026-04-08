@@ -32,7 +32,7 @@ function FullStack() {
               onClick={() => openModal(img, item)}
               className="shrink-0 w-[280px] h-[360px] sm:w-[320px] sm:h-[420px] premium-card p-6 flex flex-col items-center justify-center cursor-pointer bg-white relative overflow-hidden group snap-center"
             >
-              <div className="absolute inset-0 bg-gradient-to-tr from-slate-50 to-indigo-50/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-linear-to-tr from-slate-50 to-indigo-50/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               
               <img
                 src={img}

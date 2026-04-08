@@ -5,8 +5,8 @@ import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 
 const About = () => {
   const stats = [
-    { label: "Years Experience", value: "2+", icon: <FiClock className="text-blue-500" /> },
-    { label: "Projects Completed", value: "15+", icon: <FiZap className="text-orange-500" /> },
+    { label: "Years Experience", value: "0", icon: <FiClock className="text-blue-500" /> },
+    { label: "Projects Completed", value: "2+", icon: <FiZap className="text-orange-500" /> },
     { label: "Github Commits", value: "500+", icon: <FiActivity className="text-emerald-500" /> },
   ];
 
@@ -94,7 +94,7 @@ const About = () => {
                 </div>
                 <div>
                   <h4 className="text-[#0f172a] font-bold text-lg">Location</h4>
-                  <p className="text-slate-500 font-medium">Bhopal, India</p>
+                  <p className="text-slate-500 font-medium">Delhi, India</p>
                 </div>
               </div>
             </div>
@@ -148,7 +148,7 @@ const About = () => {
             transition={{ delay: 0.3 }}
             className="md:col-span-8 premium-card p-10 bg-indigo-600 border border-indigo-700 shadow-[0_15px_40px_rgb(79,70,229,0.15)] relative overflow-hidden"
           >
-            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-indigo-500/50 to-transparent pointer-events-none"></div>
+            <div className="absolute top-0 left-0 w-full h-full bg-linear-to-br from-indigo-500/50 to-transparent pointer-events-none"></div>
             <div className="relative z-10 grid grid-cols-1 sm:grid-cols-3 gap-8">
               {processSteps.map((step, idx) => (
                 <div key={idx} className="flex flex-col gap-4">

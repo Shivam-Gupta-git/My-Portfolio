@@ -6,7 +6,7 @@ const Carousel = memo(() => {
   const sections = useMemo(() => [
     [
       { title: "StudyMate Education Platform", category: "Web App", image: "/images/frontend6.png", link: "https://study-mate-flame.vercel.app" },
-      { title: "Advanced JS Projects", category: "Interactive", image: "/images/frontend3.png", link: "https://java-script-project-alpha.vercel.app" },
+      { title: "modern authentication system", category: "Interactive", image: "/images/authentication.png", link: "https://github.com/Shivam-Gupta-git/Login-Authentication-" },
       { title: "Dynamic Logic App", category: "Frontend", image: "/images/frontend5.png", link: "https://java-script-project-kqee.vercel.app" },
       { title: "Pizza Booking Flow", category: "E-Commerce", image: "/images/frontend4.png", link: "https://pizza-booking-web.vercel.app/Home.html" },
     ],
@@ -99,11 +99,11 @@ const Carousel = memo(() => {
                   <img
                     src={box.image}
                     alt={box.title}
-                    className="w-full h-full object-cover transition-transform duration-[800ms] group-hover:scale-[1.05]"
+                    className="w-full h-full object-cover transition-transform duration-800 group-hover:scale-[1.05]"
                     loading="lazy"
                   />
                   {/* Subtle dark gradient overlay for text readability */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                  <div className="absolute inset-0 bg-linear-to-t from-slate-900/90 via-slate-900/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
                   
                   {/* Hover overlay icon */}
                   <div className="absolute top-6 right-6 w-12 h-12 bg-white/10 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center translate-y-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 shadow-sm">

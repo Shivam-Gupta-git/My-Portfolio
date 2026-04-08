@@ -6,41 +6,41 @@ const educations = [
   {
     id: 1,
     degree: "Bachelor of Technology in Information Technology",
-    institution: "XYZ University",
-    duration: "2020 - 2024",
-    description: "Specialized in software engineering, algorithms, and full-stack development. Graduated with Honors.",
+    institution: "Swami Vivekanand Subharti University, Meerut",
+    duration: "2022 - 2026",
+    description: "Specialized in software engineering, algorithms, and full-stack development.",
   },
   {
     id: 2,
     degree: "Higher Secondary Education",
-    institution: "ABC Public School",
-    duration: "2018 - 2020",
-    description: "Focus on Computer Science and Mathematics. Passed with Distinction.",
+    institution: "Universal Public School",
+    duration: "2019 - 2021",
+    description: "Focus on Computer Science and Mathematics.",
   }
 ];
 
 const certifications = [
   {
     id: 1,
-    title: "AWS Certified Developer – Associate",
-    issuer: "Amazon Web Services",
-    date: "August 2023",
+    title: "NPTEL Online Certification",
+    issuer: "",
+    date: "Jan - Apr 2025",
     link: "#"
   },
-  {
-    id: 2,
-    title: "Meta Front-End Developer",
-    issuer: "Coursera",
-    date: "April 2023",
-    link: "#"
-  },
-  {
-    id: 3,
-    title: "Full Stack Open",
-    issuer: "University of Helsinki",
-    date: "December 2022",
-    link: "#"
-  }
+  // {
+  //   id: 2,
+  //   title: "Meta Front-End Developer",
+  //   issuer: "Coursera",
+  //   date: "April 2023",
+  //   link: "#"
+  // },
+  // {
+  //   id: 3,
+  //   title: "Full Stack Open",
+  //   issuer: "University of Helsinki",
+  //   date: "December 2022",
+  //   link: "#"
+  // }
 ];
 
 const Education = () => {
@@ -137,7 +137,7 @@ const Education = () => {
                       {cert.issuer} <span className="mx-1 text-slate-300">•</span> {cert.date}
                     </p>
                   </div>
-                  <div className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-indigo-50 group-hover:text-indigo-600 transition-colors shrink-0 outline outline-1 outline-slate-100 group-hover:outline-indigo-100">
+                  <div className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-indigo-50 group-hover:text-indigo-600 transition-colors shrink-0 outline outline-slate-100 group-hover:outline-indigo-100">
                     <FiAward className="text-xl" />
                   </div>
                 </motion.div>

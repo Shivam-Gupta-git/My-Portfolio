@@ -12,24 +12,24 @@ const experiences = [
     description: "Architecting and developing scalable web applications using the MERN stack. Spearheaded the migration of legacy systems to a modern React-based architecture, improving performance by 40%.",
     technologies: ["React", "Node.js", "MongoDB", "Express", "Tailwind CSS"],
   },
-  {
-    id: 2,
-    role: "Frontend Engineering Intern",
-    company: "Creative Web Solutions",
-    duration: "May 2023 - Aug 2023",
-    type: "Internship",
-    description: "Collaborated with designers to implement pixel-perfect user interfaces. Built responsive landing pages and interactive dashboards using React and Framer Motion.",
-    technologies: ["JavaScript", "React", "Framer Motion", "Figma"],
-  },
-  {
-    id: 3,
-    role: "Freelance Web Developer",
-    company: "Self-Employed",
-    duration: "Jan 2022 - May 2023",
-    type: "Freelance",
-    description: "Designed and developed custom portfolios, e-commerce stores, and corporate websites for various clients, focusing on SEO optimization and performance.",
-    technologies: ["HTML/CSS", "JavaScript", "Next.js", "Vercel"],
-  }
+  // {
+  //   id: 2,
+  //   role: "Frontend Engineering Intern",
+  //   company: "Creative Web Solutions",
+  //   duration: "May 2023 - Aug 2023",
+  //   type: "Internship",
+  //   description: "Collaborated with designers to implement pixel-perfect user interfaces. Built responsive landing pages and interactive dashboards using React and Framer Motion.",
+  //   technologies: ["JavaScript", "React", "Framer Motion", "Figma"],
+  // },
+  // {
+  //   id: 3,
+  //   role: "Freelance Web Developer",
+  //   company: "Self-Employed",
+  //   duration: "Jan 2022 - May 2023",
+  //   type: "Freelance",
+  //   description: "Designed and developed custom portfolios, e-commerce stores, and corporate websites for various clients, focusing on SEO optimization and performance.",
+  //   technologies: ["HTML/CSS", "JavaScript", "Next.js", "Vercel"],
+  // }
 ];
 
 const Experience = () => {
@@ -57,7 +57,7 @@ const Experience = () => {
         {/* Timeline */}
         <div className="relative max-w-4xl mx-auto">
           {/* Vertical Line */}
-          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-indigo-500/0 via-indigo-500/20 to-indigo-500/0 transform -translate-x-1/2"></div>
+          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-linear-to-b from-indigo-500/0 via-indigo-500/20 to-indigo-500/0 transform -translate-x-1/2"></div>
 
           <div className="space-y-12 md:space-y-0">
             {experiences.map((exp, index) => (

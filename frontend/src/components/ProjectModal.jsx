@@ -28,7 +28,7 @@ const ProjectModal = ({ isOpen, closeModal, selectedImage, selectedProject }) =>
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 bg-slate-900/60 backdrop-blur-xl flex items-center justify-center z-[9999] px-4 py-6 md:p-8"
+          className="fixed inset-0 bg-slate-900/60 backdrop-blur-xl flex items-center justify-center z-9999 px-4 py-6 md:p-8"
           onTap={(e) => {
             // Handle clicking background to close
             if (e.target === e.currentTarget) closeModal();
@@ -41,11 +41,11 @@ const ProjectModal = ({ isOpen, closeModal, selectedImage, selectedProject }) =>
             exit={{ scale: 0.9, opacity: 0, y: 30 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
             onTap={(e) => e.stopPropagation()}
-            className="bg-white rounded-[32px] relative w-full max-w-5xl max-h-[90vh] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.3)] flex flex-col md:flex-row border border-white/20"
+            className="bg-white rounded-4xl relative w-full max-w-5xl max-h-[90vh] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.3)] flex flex-col md:flex-row border border-white/20"
           >
             {/* Close Button - Larger and more accessible on mobile */}
             <button
-              className="absolute top-4 right-4 w-12 h-12 bg-white/90 backdrop-blur shadow-lg hover:bg-slate-100 text-slate-800 rounded-full flex items-center justify-center transition-all z-[100] border border-slate-100 active:scale-90"
+              className="absolute top-4 right-4 w-12 h-12 bg-white/90 backdrop-blur shadow-lg hover:bg-slate-100 text-slate-800 rounded-full flex items-center justify-center transition-all z-100 border border-slate-100 active:scale-90"
               onClick={(e) => {
                 e.stopPropagation();
                 closeModal();

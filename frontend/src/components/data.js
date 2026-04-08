@@ -65,56 +65,67 @@ export const reactData = [
 ]
 
 export const nextJsData = [
-  {
-    id: 1,
-    title: "Eco-Commerce Platform",
-    description: "A high-performance e-commerce solution built with Next.js 14, featuring server-side rendering, optimized image handling, and seamless Stripe integration for sustainability-focused brands.",
-    link: "https://github.com/",
-    images: ["/images/frontend6.png"],
-  },
-  {
-    id: 2,
-    title: "AI Matrix Dashboard",
-    description: "An interactive analytics dashboard leveraging Next.js API routes and real-time data streaming to visualize machine learning model performance and health metrics.",
-    link: "https://github.com/",
-    images: ["/images/frontend5.png"],
-  }
+
 ]
 
 export const fullStackData = [
   {
     id: 1,
-    title: "Nexus Social Engine",
-    description: "A complete MERN stack social media architecture featuring real-time messaging, protected routes, and an edge-case optimized notification system.",
-    link: "https://github.com/",
-    images: ["/images/frontend4.png"],
-  },
-  {
-    id: 2,
-    title: "CloudVault Storage",
-    description: "A secure, full-stack file management system with multi-factor authentication and encrypted AWS S3 bucket integration for enterprise-grade security.",
-    link: "https://github.com/",
-    images: ["/images/frontend3.png"],
+    title: "Study Mate",
+    description:`I built a secure and modern authentication system with a premium React UI and complete user authorization flow.
+
+    Core Features:
+    • User Signup & Login
+    • JWT-based Authentication & Authorization
+    • Protected Routes and Role-Based Access Control
+    • Email Verification before account activation
+    • Forgot Password & Reset Password functionality
+    • Secure Token Handling with JWT
+    • Google Login / OAuth Integration
+    • Session Persistence and Auto Login
+    • Logout functionality with secure token removal
+    
+    Frontend Features:
+    • Built with React.js and Tailwind CSS
+    • Fully responsive design for mobile, tablet, and desktop
+    • Modern glassmorphism UI with smooth animations
+    • Premium About, Contact, Notes, and Footer sections
+    • Interactive forms with validation and clean user experience
+    • Blur background effects, hover animations, and modern typography
+    
+    Backend Features:
+    • Node.js + Express.js server
+    • MongoDB database integration
+    • JWT token generation and verification
+    • Email verification using OTP / verification link
+    • Middleware for authentication and authorization
+    • Password hashing using bcrypt
+    • REST APIs for signup, login, verification, forgot password, and profile access
+    
+    Tech Stack:
+    React.js | Tailwind CSS | Node.js | Express.js | MongoDB | JWT | Bcrypt | Nodemailer | Google OAuth
+    
+    Project Goal:
+    The main goal of this project was to create a complete and secure authentication system that not only works correctly but also provides a premium user experience. I focused on security, clean architecture, responsive UI, and smooth user flow from signup to authorization.
+    
+    This project helped me improve my understanding of:
+    • Authentication vs Authorization
+    • JWT token flow
+    • Email verification systems
+    • Protected backend routes
+    • Full-stack MERN architecture
+    • Secure user management
+    `,
+    link: "https://github.com/Shivam-Gupta-git/Login-Authentication-",
+    images: [
+      "/images/authentication.png",
+    ],
   }
 ]
 
 export const javaData = [
-  {
-    id: 1,
-    title: "FinTrack Enterprise",
-    description: "A robust Java-based financial tracking system designed for enterprise scalability, featuring multi-threading for rapid transaction processing and a Spring Boot backend.",
-    link: "https://github.com/",
-    images: ["/images/frontend2.png"],
-  },
-  {
-    id: 2,
-    title: "InventorySync Pro",
-    description: "A high-density inventory management solution built with modern Java frameworks, offering real-time synchronization across global warehouse locations.",
-    link: "https://github.com/",
-    images: ["/images/frontend1.png"],
-  }
-]
 
+]
 
 export const softwareLogo = [
   {

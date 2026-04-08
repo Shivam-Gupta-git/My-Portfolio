@@ -3,12 +3,13 @@ import { motion } from 'framer-motion';
 import { FiCode, FiLayout, FiDatabase, FiServer, FiTool } from 'react-icons/fi';
 import { 
   FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaJava, 
-  FaGithub, FaDocker, FaPython, FaAws 
+  FaGithub, FaPython, 
 } from 'react-icons/fa';
 import { 
-  SiTypescript, SiNextdotjs, SiTailwindcss, SiExpress, 
-  SiMongodb, SiPostgresql, SiFirebase, SiFigma 
+   SiNextdotjs, SiTailwindcss, SiExpress, 
+  SiMongodb,  SiFirebase
 } from 'react-icons/si';
+import { GrMysql } from "react-icons/gr";
 
 // Skill categorizations matching the reference standard
 const skillCategories = [
@@ -17,7 +18,6 @@ const skillCategories = [
     icon: <FiCode className="text-indigo-500" />,
     skills: [
       { name: "JavaScript", icon: <FaJs className="text-[#F7DF1E]" /> },
-      { name: "TypeScript", icon: <SiTypescript className="text-[#3178C6]" /> },
       { name: "Java", icon: <FaJava className="text-[#5382A1]" /> },
       { name: "Python", icon: <FaPython className="text-[#3776AB]" /> },
     ]
@@ -46,7 +46,7 @@ const skillCategories = [
     icon: <FiDatabase className="text-orange-500" />,
     skills: [
       { name: "MongoDB", icon: <SiMongodb className="text-[#47A248]" /> },
-      { name: "PostgreSQL", icon: <SiPostgresql className="text-[#4169E1]" /> },
+      { name: "My SQL", icon: <GrMysql className="text-[#4169E1]" /> },
       { name: "Firebase", icon: <SiFirebase className="text-[#FFCA28]" /> },
     ]
   },
@@ -55,9 +55,6 @@ const skillCategories = [
     icon: <FiTool className="text-cyan-500" />,
     skills: [
       { name: "Git & GitHub", icon: <FaGithub className="text-slate-800" /> },
-      { name: "Docker", icon: <FaDocker className="text-[#2496ED]" /> },
-      { name: "AWS", icon: <FaAws className="text-[#FF9900]" /> },
-      { name: "Figma", icon: <SiFigma className="text-[#F24E1E]" /> },
     ]
   }
 ];

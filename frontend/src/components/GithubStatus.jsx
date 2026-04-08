@@ -74,7 +74,7 @@ const GithubStatus = memo(() => {
                 </div>
               </div>
               <div className="bg-[#f8fafc] p-6 rounded-2xl border border-slate-100 flex items-center justify-center overflow-x-auto hide-scrollbar w-full relative group">
-                <div className="absolute inset-0 bg-gradient-to-r from-[#f8fafc] via-transparent to-[#f8fafc] w-full h-full pointer-events-none opacity-0 group-hover:opacity-10 transition-opacity"></div>
+                <div className="absolute inset-0 bg-linear-to-r from-[#f8fafc] via-transparent to-[#f8fafc] w-full h-full pointer-events-none opacity-0 group-hover:opacity-10 transition-opacity"></div>
                 <img
                   src="https://ghchart.rshah.org/4f46e5/Shivam-Gupta-git"
                   alt="GitHub Contributions Graph"
